@@ -3,7 +3,7 @@
 Voici notre projet "TheRogue", un jeu qui est lié avec une base de donnée.
 
 **Pour exécuter le jeu il faut entrer cette commande dans le terminal du répertoire TheRogue**
--> `python3 .\code\Rogue.py`
+-> <br>`python3 .\code\Rogue.py`
 
 Un casque est fortement recommandé pour une meilleure expérience
 
