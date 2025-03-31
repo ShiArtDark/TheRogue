@@ -20,14 +20,14 @@ class DataBase:
         self.connexion.execute("INSERT INTO user \
                   (username, temps) VALUES \
                   ('"+username+"', "+str(time)+")")
-        #print(self.connexion.total_changes, "lignes insérées")
+    
         self.connexion.commit()
         
         self.connexion.execute("INSERT INTO scoreboard \
                                (id, chrono, score, date) VALUES \
                                ('"+str(self.getId(username))+"','"+chrono+"', "+str(score)+", +'"+str(datetime.datetime.now()).split('.')[0]+"')")
         
-        #print(self.connexion.total_changes, "lignes insérées") 
+         
         self.connexion.commit()
 
     def getId(self, username): # on recupere le nom par son nom
@@ -112,18 +112,16 @@ class DataBase:
                 
                 if username in user:
                     name = searchList[0][0]
-                    print('nom complet :')
-                    print(name)
+                    
 
                     request = self.getRank()
                     
                     for i in range(len(request)-1):
 
                         place, attribut = request[i]
-                        print("rank de la personne")
-                        print(place,attribut[0])
+                    
                         if name == request[i][1][0]:
-                            print("la recherche effectué")
+                            
                             return (i+1,attribut)
                 
             return "Aucune légende a ce nom..."
